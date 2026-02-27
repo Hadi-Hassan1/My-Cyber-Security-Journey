@@ -1,0 +1,46 @@
+Day 1 - Cyber Security Introduction
+Source: TryHackMe - Pre Security Path
+Room: Module 1 - Cyber Security Introduction
+Date: 21/02/2026
+Time spent: 8 hours
+Tasks completed: 3/3 rooms
+
+What I Learned:
+
+* Learnt about Offensive Security which includes penetration testing, red teaming, and finding vulnerabilities before attackers do.
+
+* Understood the 5 phases of penetration testing: 
+Reconnaissance, Scanning, Exploitation, Post-Exploitation, and Reporting.
+
+* Learnt about Defensive Security which focuses on protecting systems through:
+SOC (Security Operations Center), Digital Forensics, Incident Response, and Malware Analysis.
+
+* Understood the Incident Response phases: 
+Preparation, Detection & Analysis, Containment, Eradication, Recovery, and Post-Incident Activity.
+
+* Explored different career paths in cybersecurity including:
+Penetration Tester, Red Team Operator, Security Analyst, Incident Responder, Threat Hunter, and many more with their salary ranges and required skills.
+
+* Learnt about important certifications like Security+, CEH, OSCP, and their importance in career development.
+
+Key Takeaways:
+
+* Grasped the fundamental difference between offensive security (attacking to find weaknesses) and defensive security (protecting systems).
+
+* Understood that ethical hacking requires written authorization and staying within defined scope.
+
+* Realized there are many career options in cybersecurity with good salary potential ranging from $55k to $180k+.
+
+* Learned that both technical skills (networking, Linux, programming) and soft skills (communication, report writing) are important.
+
+Questions/Confusions:
+
+* Need more clarity on the difference between Red Team and Penetration Testing.
+
+* Confused about which certification path to choose for starting career.
+
+Next Session:
+
+* Start Module 2: Network Fundamentals
+* Learn about OSI Model and TCP/IP
+* Practice networking basics
