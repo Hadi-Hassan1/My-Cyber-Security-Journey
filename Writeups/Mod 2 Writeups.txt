@@ -1,0 +1,527 @@
+TryHackMe - Pre Security Path
+Module 2: Network Fundamentals - Writeup
+
+===============================================================================
+
+Session Details:
+Date: 23/02/2026
+Time spent: 18 hours
+Rooms completed: 5/5
+Progress: 100%
+
+===============================================================================
+
+Room 1: What is Networking?
+
+What I Learned:
+
+Introduction to Networking:
+- Networking is the connection of devices to share data and resources
+- The Internet is a global network connecting millions of networks
+- Networks enable communication between computers worldwide
+
+Key Networking Concepts:
+
+IP Addresses:
+- Unique identifier for devices on a network
+- IPv4: 192.168.1.1 format (4 numbers, 0-255 each)
+- IPv6: Longer format to accommodate more devices
+- Public IP: Visible on the internet
+- Private IP: Used within local networks (192.168.x.x, 10.x.x.x, 172.16.x.x)
+
+MAC Addresses:
+- Physical hardware address burned into network interface card
+- Format: AA:BB:CC:DD:EE:FF (6 pairs of hexadecimal)
+- Unique to each network device
+- Used for communication within local networks
+
+Protocols:
+- Rules that govern how data is transmitted
+- Common protocols: HTTP, HTTPS, FTP, SSH, DNS
+- Protocols work at different layers of networking
+
+Ping Command:
+- Tests connectivity between devices
+- Sends ICMP packets to target
+- Shows if device is reachable and response time
+- Usage: ping 192.168.1.1
+
+Key Understanding:
+Networks are the backbone of modern computing. Every device needs unique identifiers (IP and MAC) to communicate effectively.
+
+===============================================================================
+
+Room 2: Intro to LAN
+
+What I Learned:
+
+LAN (Local Area Network):
+- Network within limited area (home, office, building)
+- Devices connected to share resources
+- Faster speeds than WAN (Wide Area Network)
+
+Network Topologies:
+
+1. Star Topology:
+   Structure: All devices connect to central hub/switch
+   Advantages:
+   - Easy to add new devices
+   - If one device fails, others unaffected
+   - Easy to troubleshoot
+   
+   Disadvantages:
+   - If central device fails, whole network down
+   - Requires more cable than bus topology
+
+2. Bus Topology:
+   Structure: All devices connected to single cable (backbone)
+   Advantages:
+   - Easy to set up
+   - Requires less cable
+   
+   Disadvantages:
+   - If backbone fails, whole network down
+   - Difficult to troubleshoot
+   - Performance degrades with more devices
+
+3. Ring Topology:
+   Structure: Devices connected in circular loop
+   Advantages:
+   - Data flows in one direction (less collision)
+   - Equal access for all devices
+   
+   Disadvantages:
+   - If one device fails, can affect whole network
+   - Difficult to add/remove devices
+
+Network Devices:
+
+Router:
+- Connects different networks together
+- Routes data between networks
+- Assigns IP addresses (DHCP)
+- Provides security (firewall)
+- Works at Layer 3 (Network Layer)
+
+Switch:
+- Connects devices within same network
+- Uses MAC addresses to forward data
+- More intelligent than hub
+- Works at Layer 2 (Data Link Layer)
+- Each port is separate collision domain
+
+Hub:
+- Basic device that broadcasts to all ports
+- No intelligence in forwarding
+- All ports share same collision domain
+- Rarely used today (replaced by switches)
+
+Key Understanding:
+Star topology is most common in modern networks due to its reliability and ease of management.
+Switches are preferred over hubs for better performance.
+
+===============================================================================
+
+Room 3: OSI Model
+
+What I Learned:
+
+OSI Model Overview:
+- Open Systems Interconnection model
+- 7 layers that describe network communication
+- Data flows from Layer 7 down to Layer 1 (sending)
+- Data flows from Layer 1 up to Layer 7 (receiving)
+- Each layer has specific function
+
+The 7 Layers:
+
+Layer 7 - Application Layer:
+- User-facing applications and services
+- Protocols: HTTP, HTTPS, FTP, SMTP, DNS
+- Where user interacts with network
+- Examples: Web browsers, email clients
+- Data unit: Data
+
+Layer 6 - Presentation Layer:
+- Data translation and encryption
+- Converts data formats for application layer
+- Handles compression and encryption
+- Ensures data is readable format
+- Examples: SSL/TLS, JPEG, ASCII
+- Data unit: Data
+
+Layer 5 - Session Layer:
+- Manages sessions between applications
+- Establishes, maintains, and terminates connections
+- Handles authentication and authorization
+- Synchronization of data exchange
+- Examples: NetBIOS, PPTP
+- Data unit: Data
+
+Layer 4 - Transport Layer:
+- End-to-end communication and data flow control
+- Segments data and ensures delivery
+- Protocols: TCP (reliable), UDP (fast)
+- Port numbers identify applications
+- Error checking and flow control
+- Data unit: Segments (TCP) or Datagrams (UDP)
+
+Layer 3 - Network Layer:
+- Routing and logical addressing
+- Uses IP addresses for addressing
+- Determines best path for data
+- Handles packet forwarding
+- Protocols: IP, ICMP, IGMP
+- Devices: Routers
+- Data unit: Packets
+
+Layer 2 - Data Link Layer:
+- Physical addressing (MAC addresses)
+- Frame formatting and error detection
+- Controls access to physical medium
+- Switches operate here
+- Protocols: Ethernet, PPP
+- Data unit: Frames
+
+Layer 1 - Physical Layer:
+- Physical transmission of raw bits
+- Cables, network cards, wireless signals
+- Electrical signals, light, radio waves
+- Hardware specifications
+- Examples: Cables, hubs, repeaters
+- Data unit: Bits
+
+Encapsulation Process:
+Application → Presentation → Session → Transport (Segments) → Network (Packets) → Data Link (Frames) → Physical (Bits)
+
+De-encapsulation Process:
+Physical (Bits) → Data Link (Frames) → Network (Packets) → Transport (Segments) → Session → Presentation → Application
+
+Mnemonic to Remember:
+Please Do Not Throw Sausage Pizza Away (Physical, Data Link, Network, Transport, Session, Presentation, Application)
+All People Seem To Need Data Processing (reverse order)
+
+Key Understanding:
+OSI model is theoretical framework.
+Understanding it helps troubleshoot network issues and understand how protocols interact at different levels.
+
+===============================================================================
+
+Room 4: Packets and Frames
+
+What I Learned:
+
+Packets vs Frames:
+
+Packets (Layer 3):
+- Contain IP address information
+- Include source and destination IP
+- Used for routing between networks
+- Can be fragmented if too large
+
+Frames (Layer 2):
+- Contain MAC address information
+- Include source and destination MAC
+- Used within local network
+- Include error checking (CRC)
+
+Packet Structure:
+
+IP Header contains:
+- Source IP address
+- Destination IP address
+- TTL (Time To Live): Prevents infinite loops
+- Protocol: Identifies next layer protocol (TCP, UDP, ICMP)
+- Checksum: Error checking
+- Version: IPv4 or IPv6
+
+Frame Structure:
+
+Ethernet Frame contains:
+- Destination MAC address (6 bytes)
+- Source MAC address (6 bytes)
+- Type: Protocol type (IPv4, IPv6, ARP)
+- Data/Payload: The actual data (46-1500 bytes)
+- FCS (Frame Check Sequence): Error detection
+
+TCP Protocol:
+
+Features:
+- Connection-oriented (establishes connection first)
+- Reliable delivery (guarantees data arrives)
+- Error checking and correction
+- Flow control
+- Used when accuracy is critical
+
+TCP 3-Way Handshake:
+1. SYN: Client sends synchronization request
+2. SYN-ACK: Server acknowledges and sends own SYN
+3. ACK: Client acknowledges server's SYN
+Connection established!
+
+TCP Header includes:
+- Source port
+- Destination port
+- Sequence number
+- Acknowledgment number
+- Flags (SYN, ACK, FIN, RST)
+- Window size
+- Checksum
+
+UDP Protocol:
+
+Features:
+- Connectionless (no connection setup)
+- Unreliable (no delivery guarantee)
+- Faster than TCP
+- No error checking or flow control
+- Used for speed-critical applications
+
+UDP Header includes:
+- Source port
+- Destination port
+- Length
+- Checksum
+- Much simpler than TCP
+
+TCP vs UDP Comparison:
+
+TCP:
+- Reliable
+- Connection-oriented
+- Slower
+- Error checking
+- Used for: HTTP, HTTPS, FTP, Email
+
+UDP:
+- Unreliable
+- Connectionless
+- Faster
+- No error checking
+- Used for: Video streaming, VoIP, Online gaming, DNS
+
+Common Port Numbers:
+- 20/21: FTP (File Transfer Protocol)
+- 22: SSH (Secure Shell)
+- 23: Telnet
+- 25: SMTP (Email sending)
+- 53: DNS (Domain Name System)
+- 80: HTTP (Web traffic)
+- 110: POP3 (Email retrieval)
+- 143: IMAP (Email retrieval)
+- 443: HTTPS (Secure web traffic)
+- 3389: RDP (Remote Desktop Protocol)
+
+Key Understanding:
+TCP is used when reliability matters (web browsing, file transfer).
+UDP is used when speed matters more than reliability (streaming, gaming).
+Understanding packet and frame structure is essential for network analysis.
+
+===============================================================================
+
+Room 5: Extending Your Network
+
+What I Learned:
+
+Port Forwarding:
+- Technique to allow external access to services on private network
+- Router forwards specific port to internal device
+- Example: Forward port 80 to web server at 192.168.1.10
+- Used for hosting servers, gaming, remote access
+- Security consideration: Opens potential attack vector
+
+Firewalls:
+- Security device that filters network traffic
+- Controls incoming and outgoing connections
+- Rules based on IP addresses, ports, protocols
+
+Types:
+- Stateless: Examines each packet independently
+- Stateful: Tracks connection state, more intelligent
+- Application-level: Inspects application layer data
+
+Common Rules:
+- Allow HTTP (port 80) and HTTPS (port 443) outbound
+- Block all inbound except specific services
+- Allow established connections
+- Block known malicious IPs
+
+VPN (Virtual Private Network):
+- Creates encrypted tunnel over public network
+- Hides real IP address
+- Encrypts all traffic between user and VPN server
+- Provides privacy and security
+
+Benefits:
+- Secure remote access to company networks
+- Privacy from ISP and network monitoring
+- Access geo-restricted content
+- Secure public WiFi usage
+
+How VPN Works:
+1. User connects to VPN server
+2. Encrypted tunnel established
+3. All traffic routed through VPN server
+4. VPN server forwards traffic to destination
+5. Responses come back through VPN
+6. User receives encrypted data
+
+VPN Protocols:
+- OpenVPN: Open source, very secure
+- IPSec: Industry standard, secure
+- WireGuard: Modern, fast, secure
+- PPTP: Old, not recommended (insecure)
+
+Subnetting:
+- Dividing network into smaller networks (subnets)
+- Improves performance and security
+- Uses subnet mask to define network portion
+
+Example:
+192.168.1.0/24
+- /24 means first 24 bits are network
+- Last 8 bits for hosts
+- 256 addresses (254 usable, 2 reserved)
+
+Private IP Ranges:
+- 10.0.0.0/8: 10.0.0.0 - 10.255.255.255
+- 172.16.0.0/12: 172.16.0.0 - 172.31.255.255
+- 192.168.0.0/16: 192.168.0.0 - 192.168.255.255
+
+NAT (Network Address Translation):
+- Allows multiple devices share one public IP
+- Router translates private IPs to public IP
+- Provides basic security (hides internal network)
+- Essential for IPv4 address conservation
+
+DMZ (Demilitarized Zone):
+- Separate network segment for public-facing services
+- Adds extra security layer
+- Web servers, mail servers placed in DMZ
+- Isolated from internal network
+
+Key Understanding:
+Extending networks requires balancing accessibility with security.
+Port forwarding opens access but creates risks. VPNs provide secure remote access.
+Firewalls are essential for network security.
+
+===============================================================================
+
+Overall Module Reflection:
+
+What went well:
+- Clearly understood OSI model and its layers
+- Grasped difference between TCP and UDP
+- Learned about network topologies and their uses
+- Understood how data travels through networks
+
+What was challenging:
+- Subnetting calculations and CIDR notation
+- Remembering all port numbers
+- Understanding when to use router vs switch
+- VPN encryption concepts
+
+Skills Gained:
+- Understanding of network communication flow
+- Knowledge of OSI model layers and functions
+- Ability to distinguish between TCP and UDP
+- Basic understanding of network security concepts
+- Familiarity with common networking protocols
+
+===============================================================================
+
+Confusions to Resolve:
+
+1. Subnetting:
+   - How to calculate subnet masks
+   - Understanding CIDR notation (/24, /16, etc.)
+   - How to determine network and host portions
+   - Practical subnetting examples
+
+2. Router vs Switch:
+   - When to use router vs switch in real scenarios
+   - Can switch do some routing?
+   - How do managed switches differ from regular switches?
+
+3. VPN Encryption:
+   - How exactly is data encrypted in VPN tunnel?
+   - What encryption algorithms are used?
+   - How secure is VPN really?
+
+4. Port Numbers:
+   - How to remember all common ports
+   - Why specific services use specific ports
+   - Can services run on different ports?
+
+Need to research:
+- Practical subnetting exercises
+- Hands-on network configuration
+- Setting up VPN server
+- Firewall rule creation
+
+===============================================================================
+
+Next Module Plan:
+
+Module 3: How The Web Works
+
+Expected topics:
+- DNS (Domain Name System)
+- HTTP and HTTPS protocols
+- How websites function
+- Web servers and hosting
+- Cookies and sessions
+
+Preparation needed:
+- Review URL structure from Module 1
+- Understand client-server model
+- Refresh HTTP basics
+
+Goals for next module:
+- Understand complete web request flow
+- Learn DNS resolution process
+- Master HTTP methods and status codes
+- Understand web security basics
+
+===============================================================================
+
+Additional Notes:
+
+Key Terms Learned:
+- LAN: Local Area Network
+- WAN: Wide Area Network
+- MAC: Media Access Control
+- IP: Internet Protocol
+- TCP: Transmission Control Protocol
+- UDP: User Datagram Protocol
+- OSI: Open Systems Interconnection
+- DNS: Domain Name System
+- DHCP: Dynamic Host Configuration Protocol
+- NAT: Network Address Translation
+- VPN: Virtual Private Network
+- DMZ: Demilitarized Zone
+- MTU: Maximum Transmission Unit
+- TTL: Time To Live
+
+Network Commands Learned:
+- ping: Test connectivity
+- traceroute/tracert: Show path to destination
+- ipconfig/ifconfig: View network configuration
+- netstat: View network connections
+- nslookup: DNS queries
+
+Resources Used:
+- TryHackMe Pre Security Module 2 rooms
+- OSI model diagrams
+- TCP/UDP comparison charts
+- Networking terminology guides
+
+Personal Reflection:
+This module provided strong foundation in networking fundamentals. Understanding the OSI model is crucial for troubleshooting and security testing. The concepts learned here apply directly to penetration testing and security analysis. Need more practice with subnetting but overall grasped core concepts well.
+
+Practical Applications:
+- Understanding network topology helps in network scanning
+- Knowing ports helps identify services during reconnaissance
+- TCP/UDP knowledge essential for packet analysis
+- Firewall understanding crucial for bypassing defenses
+- VPN knowledge important for secure connections

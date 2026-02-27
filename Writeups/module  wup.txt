@@ -1,0 +1,414 @@
+TryHackMe - Pre Security Path
+Module 1: Cyber Security Introduction - Writeup
+
+===============================================================================
+
+Session Details:
+Date: 21/02/2026
+Time spent: 8 hours
+Rooms completed: 3/3
+Progress: 100%
+
+===============================================================================
+
+Room 1: Introduction to Offensive Security
+
+What I Learned:
+
+Offensive Security Overview:
+- Offensive security means testing systems by simulating real attacks
+- The goal is to find vulnerabilities before malicious hackers do
+- Always requires written authorization before testing
+- Must stay within defined scope
+
+Penetration Testing Phases:
+1. Reconnaissance: Gather information about the target
+2. Scanning: Identify open ports and services
+3. Exploitation: Attempt to gain access using found vulnerabilities
+4. Post-Exploitation: Maintain access and gather data
+5. Reporting: Document all findings with remediation recommendations
+
+Tools Introduced:
+- GoBuster: Used for directory enumeration
+- Burp Suite: Web application security testing
+- Nmap: Network scanning and port discovery
+- Metasploit: Exploitation framework
+
+Practical Exercise:
+- Tested a sample web application for vulnerabilities
+- Used GoBuster to find hidden directories
+- Discovered an admin panel with weak security
+- Learned how to document findings properly
+
+Key Understanding:
+Ethical hacking is legal and helps improve security.
+The difference between ethical hackers and malicious hackers is authorization and intent.
+
+Important Rules:
+- Always get written permission
+- Stay within the defined scope
+- Document everything thoroughly
+- Provide actionable remediation advice
+- Never cause harm to systems
+
+===============================================================================
+
+Room 2: Introduction to Defensive Security
+
+What I Learned:
+
+Defensive Security Overview:
+- Focuses on protecting systems, networks, and data from cyber threats
+- Involves monitoring, detection, and response to security incidents
+- Works 24/7 to keep systems safe
+
+Security Operations Center (SOC):
+Role: Monitor and defend against cyber threats around the clock
+
+Responsibilities:
+- Monitor security alerts from various systems
+- Investigate suspicious activities
+- Respond to security incidents quickly
+- Perform threat hunting
+- Manage security tools and systems
+
+Key Skills Needed:
+- Log analysis and pattern recognition
+- SIEM tools (Splunk, ELK Stack)
+- Network traffic analysis
+- Understanding of common attacks
+- Quick decision making
+
+Digital Forensics:
+Purpose: Investigate security incidents and collect evidence
+
+Types of Forensics:
+1. Computer Forensics: Analyzing computers and storage devices
+2. Mobile Forensics: Investigating smartphones and tablets
+3. Network Forensics: Examining network traffic and logs
+4. Memory Forensics: Analyzing RAM dumps for evidence
+
+Process:
+1. Acquisition: Collect evidence without modifying it
+2. Analysis: Examine evidence for relevant information
+3. Reporting: Document findings in proper legal format
+
+Incident Response:
+The process of handling security breaches and attacks
+
+Phases (NIST Framework):
+1. Preparation: Develop incident response plan and capabilities
+2. Detection & Analysis: Identify and investigate incidents
+3. Containment: Limit damage and prevent spread
+4. Eradication: Remove the threat from environment
+5. Recovery: Restore systems to normal operation
+6. Post-Incident Activity: Learn from incident and improve
+
+Malware Analysis:
+Understanding how malicious software works
+
+Types:
+- Static Analysis: Examine malware without executing it
+- Dynamic Analysis: Run malware in controlled/sandbox environment
+- Code Analysis: Reverse engineering to understand behavior
+
+Tools Used:
+- SIEM: Splunk, QRadar, ELK Stack for log management
+- IDS/IPS: Snort, Suricata for intrusion detection
+- Firewall: pfSense, Fortinet for network protection
+- EDR: CrowdStrike, Carbon Black for endpoint protection
+- Forensics: Autopsy, FTK, Volatility for investigation
+
+Key Understanding:
+Defense in depth means using multiple layers of security. Good defense prevents most attacks from succeeding.
+
+===============================================================================
+
+Room 3: Careers in Cyber Security
+
+What I Learned:
+
+Offensive Security Careers:
+
+1. Penetration Tester:
+   Salary Range: $70,000 - $150,000+
+   Responsibilities:
+   - Conduct authorized security testing
+   - Find and exploit vulnerabilities
+   - Write detailed technical reports
+   - Provide remediation guidance
+   
+   Required Skills:
+   - Networking fundamentals
+   - Web application security
+   - Programming (Python, Bash)
+   - Report writing and communication
+
+2. Red Team Operator:
+   Salary Range: $90,000 - $180,000+
+   Responsibilities:
+   - Advanced adversary simulation
+   - Social engineering campaigns
+   - Physical security testing
+   - Long-term persistent access testing
+   
+   Required Skills:
+   - Advanced exploitation techniques
+   - Custom tool development
+   - OPSEC (Operational Security)
+   - Creative thinking and problem solving
+
+3. Bug Bounty Hunter:
+   Salary Range: Variable (payment per vulnerability)
+   Responsibilities:
+   - Find vulnerabilities in bug bounty programs
+   - Write detailed vulnerability reports
+   - Work independently on multiple programs
+   
+   Required Skills:
+   - Web and mobile application security
+   - Self-motivation and time management
+   - Research and persistence
+   - Clear communication
+
+4. Security Consultant:
+   Salary Range: $80,000 - $160,000+
+   Responsibilities:
+   - Advise organizations on security
+   - Conduct risk assessments
+   - Design security architecture
+   - Manage client relationships
+   
+   Required Skills:
+   - Broad security knowledge
+   - Business understanding
+   - Excellent communication
+   - Project management
+
+Defensive Security Careers:
+
+1. Security Analyst (SOC):
+   Salary Range: $55,000 - $100,000+
+   Responsibilities:
+   - Monitor security events 24/7
+   - Investigate alerts and anomalies
+   - Escalate serious incidents
+   - Tune detection rules
+   
+   Required Skills:
+   - SIEM platform knowledge
+   - Log analysis skills
+   - Network protocol understanding
+   - Threat intelligence
+
+2. Incident Responder:
+   Salary Range: $75,000 - $140,000+
+   Responsibilities:
+   - Handle active security breaches
+   - Contain and remediate threats
+   - Coordinate response efforts
+   - Conduct post-incident analysis
+   
+   Required Skills:
+   - Digital forensics
+   - Malware analysis basics
+   - Network analysis
+   - Staying calm under pressure
+
+3. Threat Hunter:
+   Salary Range: $85,000 - $150,000+
+   Responsibilities:
+   - Proactively search for hidden threats
+   - Develop new detection methods
+   - Analyze adversary tactics
+   - Improve overall security posture
+   
+   Required Skills:
+   - Advanced log analysis
+   - Threat intelligence
+   - Scripting and automation
+   - Hypothesis-driven investigation
+
+4. Digital Forensics Analyst:
+   Salary Range: $65,000 - $130,000+
+   Responsibilities:
+   - Investigate cyber crimes
+   - Collect and preserve evidence
+   - Analyze digital artifacts
+   - Provide expert testimony
+   
+   Required Skills:
+   - Forensic tool expertise
+   - Legal process knowledge
+   - Extreme attention to detail
+   - Technical report writing
+
+5. Security Engineer:
+   Salary Range: $90,000 - $170,000+
+   Responsibilities:
+   - Design security solutions
+   - Implement security controls
+   - Automate security processes
+   - Maintain security infrastructure
+   
+   Required Skills:
+   - Network and cloud security
+   - Programming and scripting
+   - Security tool deployment
+   - System administration
+
+6. Malware Analyst:
+   Salary Range: $75,000 - $145,000+
+   Responsibilities:
+   - Reverse engineer malicious software
+   - Analyze malware behavior
+   - Develop detection signatures
+   - Create threat intelligence reports
+   
+   Required Skills:
+   - Assembly and low-level programming
+   - Reverse engineering tools
+   - Operating system internals
+   - Analysis tools (IDA, Ghidra)
+
+
+Career Development Path:
+
+Step 1: Build Foundation
+- Learn networking fundamentals (TCP/IP, ports, protocols)
+- Master operating systems (Linux and Windows)
+- Understand programming basics (Python, Bash)
+- Learn security concepts and terminology
+
+Step 2: Get Hands-On Practice
+- Practice on TryHackMe and HackTheBox platforms
+- Build personal home lab for testing
+- Participate in CTF competitions
+- Contribute to open source security projects
+
+Step 3: Earn Certifications
+- Start with CompTIA Security+ for foundation
+- Progress to OSCP for practical skills
+- Specialize based on career interest
+- Keep learning and updating certifications
+
+Step 4: Network and Engage
+- Attend security conferences (DEF CON, Black Hat)
+- Join local cybersecurity meetup groups
+- Engage on Twitter and LinkedIn with security community
+- Share knowledge through blogs or presentations
+
+Step 5: Stay Current
+- Follow security blogs and news sites
+- Read vulnerability reports and disclosures
+- Practice new techniques regularly
+- Learn from others in the community
+
+Industry Sectors:
+- Tech Companies: Google, Microsoft, Meta, Amazon
+- Financial Services: Banks, investment firms, trading companies
+- Healthcare: Hospitals, medical device companies
+- Government: Military, intelligence agencies, public sector
+- Consulting: Big 4 firms, boutique security consultancies
+- Security Vendors: CrowdStrike, Palo Alto Networks, Fortinet
+
+Key Understanding:
+There are many paths in cybersecurity.
+Choose based on your interests (offense vs defense), personality (independent vs team), and goals.
+Both offensive and defensive roles are equally important and well-compensated.
+
+===============================================================================
+
+Overall Module Reflection:
+
+What went well:
+- Clearly understood the difference between offensive and defensive security
+- Got comprehensive overview of career options available
+- Learned about the importance of proper authorization
+- Understood the value of both attacking and defending
+
+What was challenging:
+- So many career options made it hard to choose direction
+- Understanding all the different tools and their purposes
+- Keeping track of certification paths and their levels
+
+Skills Gained:
+- Basic understanding of security concepts
+- Knowledge of security career landscape
+- Familiarity with common security tools
+- Understanding of ethical hacking principles
+- Awareness of certification importance
+
+===============================================================================
+
+Confusions to Resolve:
+
+1. Red Team vs Penetration Testing:
+   - What exactly is the difference?
+   - When is red teaming used vs regular pentesting?
+   - Which one should beginners focus on?
+
+2. Certification Path:
+   - Should I start with Security+ or go straight to OSCP?
+   - How important are certifications vs practical skills?
+   - Which certifications are most valued by employers?
+
+3. Career Direction:
+   - Should I focus on offensive or defensive security?
+   - Can I switch between offense and defense later?
+   - Which path has better job opportunities?
+
+Need to research:
+- Detailed comparison between different career paths
+- Real-world job requirements and expectations
+- How to build a strong portfolio without certifications
+
+===============================================================================
+
+Next Module Plan:
+
+Module 2: Network Fundamentals
+
+Expected topics:
+- What is networking
+- OSI Model layers
+- TCP/IP protocol suite
+- Network devices and topologies
+- Packets and frames
+
+Preparation needed:
+- Review basic networking concepts
+- Set up virtual lab if possible
+- Prepare note-taking system
+
+Goals for next module:
+- Understand OSI model thoroughly
+- Learn how data moves through networks
+- Practice with networking tools
+- Build strong foundation for security work
+
+===============================================================================
+
+Additional Notes:
+
+Key Terms Learned:
+- CIA Triad: Confidentiality, Integrity, Availability
+- SOC: Security Operations Center
+- SIEM: Security Information and Event Management
+- Blue Team: Defensive security team
+- Red Team: Offensive security team
+- Purple Team: Collaboration between red and blue
+- CVE: Common Vulnerabilities and Exposures
+- IOC: Indicators of Compromise
+- APT: Advanced Persistent Threat
+- OSINT: Open Source Intelligence
+
+Resources Used:
+- TryHackMe Pre Security Module 1 rooms
+- Room documentation and explanations
+- Practical exercises provided
+
+Personal Reflection:
+This module provided excellent foundation for understanding cybersecurity field.
+It's clear that both offensive and defensive skills are valuable, and there are many career paths to explore.
+The emphasis on ethical behavior and proper authorization is important and something I'll always remember.
